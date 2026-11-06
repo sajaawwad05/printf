@@ -26,7 +26,7 @@ int	ft_printf(const char *args, ...)
 #include <limits.h>
 int main ()
 {
-	//char *s = "start";
-	ft_printf("%u\n", INT_MIN);
-	printf("%u\n", INT_MIN);
+	int	l = 0;
+	ft_printf("%c\n%s\n%d\n%i\n%u\n%x\n%X\n%p\n%%\n", 'c', "jj", 8, 9, 7, 88, 99,&l);
+	printf("%c\n%s\n%d\n%i\n%u\n%x\n%X\n%p\n%%\n", 'c', "jj", 8, 9, 7, 88, 99, &l);
 }

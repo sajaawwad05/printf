@@ -15,5 +15,11 @@ int	print_format(char specifier, va_list *ap)
 		count += print_nbr(va_arg(*ap, int));
 	else if (specifier == 'u')
 		count += print_nbr(va_arg(*ap, unsigned int));
+	else if (specifier == 'x')
+		count += print_hex(va_arg(*ap, unsigned int), 0);
+	else if (specifier == 'X')
+		count += print_hex(va_arg(*ap, unsigned int), 1);
+	else if (specifier == 'p')
+		count += print_ptr(va_arg(*ap, void *));
 	return (count);
 }
