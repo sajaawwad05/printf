@@ -1,4 +1,4 @@
-#include "printf.h"
+#include "ft_printf.h"
 
 int	print_nbr(long n)
 {
@@ -18,9 +18,9 @@ int	print_nbr(long n)
 	count += print_char((n % 10) + '0');
 	return (count);
 }
-#include <stdio.h>
+/*#include <stdio.h>
 int main()
 {
 	int	d = print_nbr(-6667);
 	printf("\n%d\n", d);
-}
+}*/

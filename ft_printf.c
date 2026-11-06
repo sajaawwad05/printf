@@ -1,4 +1,4 @@
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_printf(const char *args, ...)
 {
@@ -10,7 +10,11 @@ int	ft_printf(const char *args, ...)
 	while (*args)
 	{
 		if (*args == '%')
-			count += print_format(*(++args), ap);
+		{
+			if (!*(args + 1))
+				break ;			
+			count += print_format(*(++args), &ap);
+		}
 		else
 			count += write (1, args, 1);
 		args++;
@@ -18,8 +22,11 @@ int	ft_printf(const char *args, ...)
 	va_end(ap);
 	return (count);
 }
+#include <stdio.h>
+#include <limits.h>
 int main ()
 {
-	char *s = "start";
-	ft_printf("%s\n", s);
+	//char *s = "start";
+	ft_printf("%u\n", INT_MIN);
+	printf("%u\n", INT_MIN);
 }
